@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+     >
+    <!--android:dropDownWidth="111dp" 设置菜单的宽度
+    android:popupBackground="@color/colorAccent"设置菜单的背景颜色
+     android:entries="@array/item"设置条目显示内容
+    -->
+    <Spinner
+        android:id="@+id/sp_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:spinnerMode="dropdown"></Spinner>
+</RelativeLayout>

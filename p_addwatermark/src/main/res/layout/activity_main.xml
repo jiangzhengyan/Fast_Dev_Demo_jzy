@@ -1,0 +1,85 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        >
+
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="s1"
+            android:text="添加原图"
+            />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="s2"
+            android:text="展示水印图片"
+            />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="s3"
+            android:text="保存原图图片"
+            />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="s4"
+            android:text="保存加水印图片"
+            />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:id="@+id/sour_pic_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="添加原图"/>
+
+            <ImageView
+                android:id="@+id/sour_pic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="centerInside"
+                />
+
+            <TextView
+                android:id="@+id/watermark_pic_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="水印"/>
+
+            <ImageView
+                android:id="@+id/wartermark_pic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="centerInside"/>
+        </LinearLayout>
+
+
+    </ScrollView>
+</LinearLayout>

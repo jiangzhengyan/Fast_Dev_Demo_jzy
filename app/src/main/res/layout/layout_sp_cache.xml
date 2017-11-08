@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="3dp"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_title" />
+
+    <EditText
+        android:paddingLeft="3dp"
+        android:id="@+id/et_content"
+        android:layout_width="match_parent"
+        android:layout_height="77dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_sp"
+        android:gravity="center_vertical"
+        android:hint="请输入要保存的内容..." />
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="122dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_sp"
+        android:text="保存" />
+
+    <TextView
+        android:paddingLeft="3dp"
+        android:id="@+id/tv_content"
+        android:layout_width="match_parent"
+        android:layout_height="77dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_sp"
+        android:gravity="center_vertical"
+        android:hint="保存的内容为?" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="77dp">
+
+        <Button
+            android:id="@+id/btn_get"
+            android:layout_width="122dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/bg_sp"
+            android:text="读取" />
+
+        <Button
+            android:id="@+id/btn_clear"
+            android:layout_width="122dp"
+            android:layout_height="55dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/bg_sp"
+            android:text="清空" />
+
+    </RelativeLayout>
+
+</LinearLayout>

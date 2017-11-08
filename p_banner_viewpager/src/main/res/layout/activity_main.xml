@@ -1,0 +1,44 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+
+    <android.support.v4.view.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:id="@+id/viewPager"
+        />
+
+    
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#6000"
+        android:gravity="center"
+        android:layout_alignBottom="@id/viewPager"
+        android:padding="12dp"
+        android:orientation="vertical">
+        
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:textSize="16sp"
+            android:id="@+id/tv_title"
+            android:singleLine="true"
+            android:text="呦呦哟，切克闹，煎饼果子来一套"/>
+        
+        <LinearLayout android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/dot_layout"
+            android:layout_marginTop="3dp"
+            android:orientation="horizontal">
+            
+            
+        </LinearLayout>
+        
+    </LinearLayout>
+    
+    
+   
+    
+</RelativeLayout>

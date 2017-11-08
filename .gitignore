@@ -1,0 +1,16 @@
+*.iml
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+/build
+/captures
+*.apk
+.idea
+build
+app/build
+app/libs/armeabi/
+app/obj/local/*
+recorderlib/obj/*
+recorderlib/src/main/obj/*

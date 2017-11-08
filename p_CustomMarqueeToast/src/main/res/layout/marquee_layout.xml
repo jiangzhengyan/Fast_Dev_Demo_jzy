@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:gravity="center_vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_toLeftOf="@+id/rl_shut_circle_shape"
+        android:background="@android:color/white"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_toLeftOf="@+id/rl_shut_circle_shape"
+        android:background="#B3000000"/>
+
+    <!--<HorizontalScrollView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_toLeftOf="@+id/rl_shut_circle_shape"-->
+
+    <!--android:scrollbars="none">-->
+
+    <LinearLayout
+        android:id="@+id/ll_marquee"
+
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/rl_shut_circle_shape"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_gift_pic"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="7dp"
+            android:src="@mipmap/ic_launcher"/>
+
+        <TextView
+            android:id="@+id/tv_gift_user_name_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxEms="6"
+            android:singleLine="true"
+            android:textColor="#FFFFD200"
+            android:textSize="15sp"/>
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxEms="6"
+            android:singleLine="true"
+            android:text="送 给"
+            android:textColor="@android:color/white"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/tv_gift_user_name_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLength="6"
+            android:singleLine="true"
+            android:textColor="#FFFFD200"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxEms="6"
+            android:singleLine="true"
+            android:text="一火星金条"
+            android:textColor="@android:color/white"
+            android:textSize="15sp"/>
+    </LinearLayout>
+
+    <!--</HorizontalScrollView>-->
+
+    <RelativeLayout
+        android:id="@+id/rl_shut_circle_shape"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_alignParentRight="true"
+        android:background="@android:color/white">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#B3000000"/>
+
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="6dp"
+            android:src="@mipmap/shut_circle_shape"/>
+    </RelativeLayout>
+
+</RelativeLayout>

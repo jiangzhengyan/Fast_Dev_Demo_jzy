@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_title" />
+
+    <com.examle.jiang_yan.fast_develop.widgets.CustomerScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_sp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="9dp">
+            <!--第一个-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="BallPulse : "
+                    android:textSize="23sp" />
+
+                <com.wang.avi.AVLoadingIndicatorView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:indicator="BallPulse"
+                    app:indicator_color="@android:color/holo_red_dark" />
+
+            </LinearLayout>
+            <!--第二个-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="BallGridPulse : "
+                    android:textSize="23sp" />
+
+                <com.wang.avi.AVLoadingIndicatorView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:indicator="BallGridPulse"
+                    app:indicator_color="@android:color/holo_red_dark" />
+
+            </LinearLayout>
+
+            <!--第三个-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="BallClipRotate : "
+                    android:textSize="23sp" />
+
+                <com.wang.avi.AVLoadingIndicatorView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:indicator="BallClipRotate"
+                    app:indicator_color="@android:color/holo_red_dark" />
+
+            </LinearLayout>
+
+            <!--第4个-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="BallClipRotatePulse : "
+                    android:textSize="23sp" />
+
+                <com.wang.avi.AVLoadingIndicatorView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:indicator="BallClipRotatePulse"
+                    app:indicator_color="@android:color/holo_red_dark" />
+
+            </LinearLayout>
+
+            <!--第5个-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="BallClipRotateMultiple : "
+                    android:textSize="23sp" />
+
+                <com.wang.avi.AVLoadingIndicatorView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:indicator="BallClipRotateMultiple"
+                    app:indicator_color="@android:color/holo_red_dark" />
+
+            </LinearLayout>
+
+            <!--第6个-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="BallPulseRise : "
+                    android:textSize="23sp" />
+
+                <com.wang.avi.AVLoadingIndicatorView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:indicator="BallPulseRise"
+                    app:indicator_color="@android:color/holo_red_dark" />
+
+            </LinearLayout>
+
+            <!--第7个-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="BallPulseSync : "
+                    android:textSize="23sp" />
+
+                <com.wang.avi.AVLoadingIndicatorView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:indicator="BallPulseSync"
+                    app:indicator_color="@android:color/holo_red_dark" />
+
+            </LinearLayout>
+
+            <!--第9个-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="BallRotate : "
+                    android:textSize="23sp" />
+
+                <com.wang.avi.AVLoadingIndicatorView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:indicator="BallRotate"
+                    app:indicator_color="@android:color/holo_red_dark" />
+
+            </LinearLayout>
+
+            <!--第10个-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="BallScale : "
+                    android:textSize="23sp" />
+
+                <com.wang.avi.AVLoadingIndicatorView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:indicator="BallScale"
+                    app:indicator_color="@android:color/holo_red_dark" />
+
+            </LinearLayout>
+
+            <!--第11个-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="BallClipRotate : "
+                    android:textSize="23sp" />
+
+                <com.wang.avi.AVLoadingIndicatorView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:indicator="BallScaleMultiple"
+                    app:indicator_color="@android:color/holo_red_dark" />
+
+            </LinearLayout>
+
+            <!--第12个-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="BallSpinFadeLoader : "
+                    android:textSize="23sp" />
+
+                <com.wang.avi.AVLoadingIndicatorView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:indicator="BallSpinFadeLoader"
+                    app:indicator_color="@android:color/holo_red_dark" />
+
+            </LinearLayout>
+
+            <!--第13个-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="BallZigZag : "
+                    android:textSize="23sp" />
+
+                <com.wang.avi.AVLoadingIndicatorView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:indicator="BallZigZag"
+                    app:indicator_color="@android:color/holo_red_dark" />
+
+            </LinearLayout>
+
+            <!--第14个-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="BallTrianglePath : "
+                    android:textSize="23sp" />
+
+                <com.wang.avi.AVLoadingIndicatorView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:indicator="BallTrianglePath"
+                    app:indicator_color="@android:color/holo_red_dark" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </com.examle.jiang_yan.fast_develop.widgets.CustomerScrollView>
+
+</LinearLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--<item android:state_pressed="true">-->
+    <!--<color android:color="@color/item_state_pressed"></color>-->
+    <!--</item>-->
+    <!--<item android:state_pressed="false">-->
+    <!--<color android:color="@color/item_state"></color>-->
+
+    <!--</item>-->
+    <corners android:radius="12dp"/>
+    <solid android:color="#e4bbbb"/>
+    <stroke
+        android:width="2dp"
+        android:color="#f57676"/>
+</shape>

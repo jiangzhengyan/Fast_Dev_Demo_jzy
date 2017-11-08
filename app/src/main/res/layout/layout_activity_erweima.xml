@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_title" />
+
+    <Button
+        android:layout_marginTop="44dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_sao"
+        android:background="#f40909"
+        android:text="扫一下"
+        /> <Button
+        android:layout_marginTop="44dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_result"
+        android:background="#4a64e9"
+        android:text="查看扫描结果历史"
+        />
+</LinearLayout>
