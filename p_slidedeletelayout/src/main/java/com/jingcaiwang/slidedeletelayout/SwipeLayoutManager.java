@@ -7,7 +7,7 @@ import java.util.ArrayList;
  */
 
 public class SwipeLayoutManager {
-    ArrayList<SwipeLayout> arrayList=  new ArrayList();
+
     private SwipeLayoutManager() {
     }
 
@@ -25,12 +25,10 @@ public class SwipeLayoutManager {
      * @param openSwipeLayout
      */
     public void setOpenSwipeLayout(SwipeLayout openSwipeLayout) {
-        arrayList.add(openSwipeLayout);
+
         this.openSwipeLayout = openSwipeLayout;
     }
-    public  ArrayList<SwipeLayout> getOpenSwipeLayout(){
-        return arrayList;
-    }
+
 
     /**
      * 判断当前是否能够滑动
@@ -49,7 +47,7 @@ public class SwipeLayoutManager {
 
     public void clearSwipeLayout() {
         openSwipeLayout = null;
-        arrayList.clear();
+
     }
 
     /**
