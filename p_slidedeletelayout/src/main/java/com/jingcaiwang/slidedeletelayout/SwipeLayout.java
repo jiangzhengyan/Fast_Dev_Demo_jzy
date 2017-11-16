@@ -14,6 +14,7 @@ import android.widget.FrameLayout;
 
 /**
  * Created by jiang_yan on 2017/11/11.
+ *  滑动删除
  */
 
 public class SwipeLayout extends FrameLayout {
