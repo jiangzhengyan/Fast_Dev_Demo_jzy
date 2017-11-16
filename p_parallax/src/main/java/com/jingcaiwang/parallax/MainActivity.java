@@ -18,7 +18,6 @@ public class MainActivity extends AppCompatActivity {
         ParallaxListView lv_list = (ParallaxListView) findViewById(R.id.lv_list);
         View header = View.inflate(this, R.layout.parallax_header, null);
         ImageView iv_parallax = (ImageView) header.findViewById(R.id.iv_parallax);
-
         lv_list.setParallaxHeaderImage(iv_parallax);
         lv_list.addHeaderView(header);
         lv_list.setAdapter(new MyAdapter());
