@@ -1,7 +1,5 @@
 package com.jingcaiwang.slidedeletelayout;
 
-import java.util.ArrayList;
-
 /**
  * Created by jiang_yan on 2017/11/13.
  */
@@ -26,7 +24,11 @@ public class SwipeLayoutManager {
      */
     public void setOpenSwipeLayout(SwipeLayout openSwipeLayout) {
 
+        if (this.openSwipeLayout != null) {
+            this.openSwipeLayout.close();
+        }
         this.openSwipeLayout = openSwipeLayout;
+
     }
 
 
@@ -58,4 +60,5 @@ public class SwipeLayoutManager {
             openSwipeLayout.close();
         }
     }
+
 }

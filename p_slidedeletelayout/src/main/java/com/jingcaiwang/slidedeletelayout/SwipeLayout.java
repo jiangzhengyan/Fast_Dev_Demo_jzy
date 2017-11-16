@@ -73,7 +73,6 @@ public class SwipeLayout extends FrameLayout {
         contentHeight = contentView.getMeasuredHeight();
         deleteWidth = deleteView.getMeasuredWidth();
         deleteHeight = deleteView.getMeasuredHeight();
-        Log.e(TAG, "onSizeChanged: " + contentWidth);
     }
 
     @Override
@@ -96,8 +95,6 @@ public class SwipeLayout extends FrameLayout {
 
         @Override
         public int clampViewPositionHorizontal(View child, int left, int dx) {
-            Log.e(TAG, "clampViewPositionHorizontal: " + left);
-            Log.e(TAG, "clampViewPositionHorizontal: " + dx);
             if (child == contentView) {
                 if (left > 0)
                     left = 0;
@@ -125,7 +122,6 @@ public class SwipeLayout extends FrameLayout {
                 contentView.layout(newLeft, 0, newLeft + contentWidth, contentView.getBottom());
             }
 
-
             //处理打开与关闭的逻辑
             if (contentView.getLeft() < -deleteWidth / 2) {
                 //说明打开了
@@ -136,49 +132,36 @@ public class SwipeLayout extends FrameLayout {
                 mState = SwipeState.Close;
 
             }
-            Log.e(TAG, "onViewPositionChanged: 随时的状态::  " + mState);
+
         }
 
         @Override
         public void onViewReleased(View releasedChild, float xvel, float yvel) {
             super.onViewReleased(releasedChild, xvel, yvel);
-//            if(contentView.getLeft()<-deleteWidth/2){
-//                //需要让SwipeLayoutManager去记录
-//                if (mState==SwipeState.Close)
-//                    SwipeLayoutManager.getInstance().setOpenSwipeLayout(SwipeLayout.this);
-//                //应该打开
-//                open();
-//            }else if (contentView.getLeft()>-deleteWidth/2){
-//                //应该关闭
-//                if (mState==SwipeState.Open)
-//                    SwipeLayoutManager.getInstance().clearSwipeLayout();
-//
-//                close();
-//            }
 
+            if (xvel > 2555) {
+                mState = SwipeState.Close;
+            } else if (xvel < -2555) {
+                mState = SwipeState.Open;
+            }
             if (mState == SwipeState.Open) {
-                SwipeLayoutManager.getInstance().setOpenSwipeLayout(SwipeLayout.this);
 //                //应该打开
                 open();
             } else {
-                SwipeLayoutManager.getInstance().clearSwipeLayout();
                 close();
             }
+
         }
     };
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
         boolean result = viewDragHelper.shouldInterceptTouchEvent(ev);
-
-        Log.e(TAG, "onInterceptTouchEvent:viewDragHelper.shouldInterceptTouchEvent   " + result);
-
         //判断当前是否满足可以滑动的条件
         if (!SwipeLayoutManager.getInstance().isCanSwipe(this)) {
             //说明不满足，应该首先去关闭已经打开的
             SwipeLayoutManager.getInstance().closeSwipeLayout();
 
-            Log.e(TAG, "onInterceptTouchEvent: //说明不满足，应该首先去关闭已经打开的 ");
             //去拦截事件，交给onTouchEvent处理
             result = true;
         }
@@ -190,17 +173,10 @@ public class SwipeLayout extends FrameLayout {
     private float moveX, moveY;//移动时候x,y坐标
     private float delX, delY;//抬起时候x,y偏移量
     private long downTime;
-    private float mVx = 1.2f;//x轴速度
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
 
-//        if(!SwipeLayoutManager.getInstance().isCanSwipe(this)){
-//            //应该不让SwipeLayout滑动
-//            //此时应该请求ListVIew不要去拦截
-//            requestDisallowInterceptTouchEvent(true);
-//            return true;
-//        }
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 downTime = System.currentTimeMillis();
@@ -220,9 +196,11 @@ public class SwipeLayout extends FrameLayout {
                 long duration = System.currentTimeMillis() - downTime;
                 delX = moveX - downX;
                 delY = moveY - downY;
+
                 break;
 
         }
+        invalidate();
         //把触摸事件交给viewdragHelp
         viewDragHelper.processTouchEvent(event);
         return true;
@@ -233,7 +211,8 @@ public class SwipeLayout extends FrameLayout {
      * 打开
      */
     public void open() {
-        Log.e(TAG, "open: ");
+
+        SwipeLayoutManager.getInstance().setOpenSwipeLayout(SwipeLayout.this);
         viewDragHelper.smoothSlideViewTo(contentView, -deleteWidth, 0);
         //刷新整个VIew
         ViewCompat.postInvalidateOnAnimation(this);
@@ -243,9 +222,12 @@ public class SwipeLayout extends FrameLayout {
      * 关闭
      */
     public void close() {
+        Log.e(TAG, "close: ");
         viewDragHelper.smoothSlideViewTo(contentView, 0, 0);
         //刷新整个VIew
         ViewCompat.postInvalidateOnAnimation(this);
+        SwipeLayoutManager.getInstance().clearSwipeLayout();
+
     }
 
     @Override
