@@ -82,7 +82,7 @@ public class ParallaxListView extends ListView {
         //如果是顶部到头,并且是手指拖到头的,才让header高度增加
         if (deltaY < 0 && isTouchEvent) {
 //            int newHeight = parallaxImageOriginalHeight - deltaY;
-            int newHeight = parallaxImage.getHeight() - deltaY/3;
+            int newHeight = parallaxImage.getHeight() - deltaY / 3;
             //限制滑动的最大值
             if (newHeight > parallaxTrueHeight)
                 newHeight = parallaxTrueHeight;

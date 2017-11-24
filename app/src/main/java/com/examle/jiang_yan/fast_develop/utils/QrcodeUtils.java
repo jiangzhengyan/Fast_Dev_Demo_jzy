@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.Bitmap.CompressFormat;
 import android.net.Uri;
 import android.os.Environment;
+import android.text.TextUtils;
 import android.widget.ImageView;
 
 import com.google.zxing.BarcodeFormat;
@@ -37,7 +38,7 @@ public class QrcodeUtils {
 	public static Bitmap createQRImage(String url) {
 		try {
 			// 判断URL合法性
-			if (url == null || "".equals(url) || url.length() < 1) {
+			if (TextUtils.isEmpty(url)) {
 				return null;
 			}
 			Hashtable<EncodeHintType, String> hints = new Hashtable<EncodeHintType, String>();
