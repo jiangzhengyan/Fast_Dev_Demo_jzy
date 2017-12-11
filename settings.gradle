@@ -1,2 +1,2 @@
-include ':app', ':lib_pullToRefreshlibrary', ':lib_okhttp', ':p_customdialog_up_to_down', ':p_intentservice', ':p_CustomMarqueeToast', ':p_addwatermark', ':p_qq_slidemenu', ':p_banner_viewpager', ':p_togglebutton', ':p_slidedeletelayout', ':p_parallax'
+include ':app', ':lib_pullToRefreshlibrary', ':lib_okhttp', ':p_customdialog_up_to_down', ':p_intentservice', ':p_CustomMarqueeToast', ':p_addwatermark', ':p_qq_slidemenu', ':p_banner_viewpager', ':p_togglebutton', ':p_slidedeletelayout', ':p_parallax', ':myapplication2', ':myapplication2'
 

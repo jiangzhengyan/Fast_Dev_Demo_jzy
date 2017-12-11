@@ -1,4 +1,4 @@
-package com.jingcaiwang;
+package com.jingcaiwang.b;
 
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
@@ -7,13 +7,15 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 
+import com.jingcaiwang.Ad;
+
 import java.util.ArrayList;
 
-public class MyAdapter extends PagerAdapter {
+public class BPagerAdapter extends PagerAdapter {
     protected Context context;
     protected ArrayList<Ad> list;
 
-    public MyAdapter(Context context, ArrayList<Ad> list) {
+    public BPagerAdapter(Context context, ArrayList<Ad> list) {
         super();
         this.context = context;
         this.list = list;

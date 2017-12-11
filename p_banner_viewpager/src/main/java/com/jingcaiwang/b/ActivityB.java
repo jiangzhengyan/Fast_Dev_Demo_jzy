@@ -1,5 +1,7 @@
-package com.jingcaiwang;
+package com.jingcaiwang.b;
 
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,11 +15,16 @@ import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
 
-import com.jingcaiwang.b.ActivityB;
+import com.jingcaiwang.Ad;
+import com.jingcaiwang.MainPagerAdapter;
+import com.jingcaiwang.R;
+import com.jingcaiwang.transformer.DepthTransformation;
+import com.jingcaiwang.transformer.Transformer_1;
+import com.jingcaiwang.transformer.Transformer_2;
+import com.jingcaiwang.transformer.Transformer_3;
 
 import java.util.ArrayList;
-
-public class MainActivity extends Activity implements View.OnClickListener {
+public class ActivityB  extends Activity  {
     private ViewPager viewPager;
     private TextView tv_title;
     private LinearLayout dot_layout;
@@ -32,14 +39,13 @@ public class MainActivity extends Activity implements View.OnClickListener {
             handler.sendEmptyMessageDelayed(0, 2500);
         }
     };
-    private Button btn_b;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        btn_b = (Button) findViewById(R.id.btn_b);
-        btn_b.setOnClickListener(this);
+        setContentView(R.layout.activity_b);
+
         //1.初始化VIew
         viewPager = (ViewPager) findViewById(R.id.viewPager);
         tv_title = (TextView) findViewById(R.id.tv_title);
@@ -99,7 +105,12 @@ public class MainActivity extends Activity implements View.OnClickListener {
             }
         });
         //设置左右可以缓存的页数，但是一般不用，因为会造成内存过大的问题
-//		viewPager.setOffscreenPageLimit(4); 
+		viewPager.setOffscreenPageLimit(4);
+//        viewPager.setPageTransformer(true,new Transformer_1());
+//        viewPager.setPageTransformer(true,new Transformer_2());
+//        viewPager.setPageTransformer(true,new Transformer_3());
+        viewPager.setPageTransformer(true,new DepthTransformation());
+        viewPager.setPageTransformer(true,new DepthTransformation());
 
         //动态创建点，并且添加到dot_layout
         initDot();
@@ -119,16 +130,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
      */
     private void initDot() {
         for (int i = 0; i < list.size(); i++) {
-            //1.创建点的View
             View view = new View(this);
-            //2.给view设置宽高
             LayoutParams params = new LayoutParams(10, 10);
             params.leftMargin = 10;
             view.setLayoutParams(params);
-            //3.设置默认的黑色的点作为背景
             view.setBackgroundResource(R.drawable.dot_black);
-
-            //将View对象添加到dot_layout
             dot_layout.addView(view);
         }
     }
@@ -137,12 +143,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
      * 根据当前ViewPager选中的页来设置标题和点的图片
      */
     protected void updateTitleAndDot() {
-        //1.获取当前选中的页
         int currentItem = viewPager.getCurrentItem() % list.size();
-        //2.让对应位置的广告的标题设置给TextView
         tv_title.setText(list.get(currentItem).getTitle());
-
-        //3.让对应位置的点变白色,还要让其他的点变黑色
         for (int i = 0; i < list.size(); i++) {
             View child = dot_layout.getChildAt(i);
             child.setBackgroundResource(i == currentItem ? R.drawable.dot_white
@@ -153,27 +155,22 @@ public class MainActivity extends Activity implements View.OnClickListener {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        //移除掉消息
         handler.removeMessages(0);
     }
 
+    /**
+     *  停止
+     */
     private void stop() {
         handler.removeMessages(0);
     }
 
+    /**
+     * 开始
+     */
     private void start() {
         handler.sendEmptyMessageDelayed(0, 2500);
     }
 
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case (R.id.btn_b):
-                //跳转b
-
-                startActivity(new Intent(this,ActivityB.class));
-                break;
-        }
-    }
 }
