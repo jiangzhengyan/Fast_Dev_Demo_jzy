@@ -11,7 +11,7 @@ import com.jingcaiwang.Ad;
 
 import java.util.ArrayList;
 
-public class BPagerAdapter extends PagerAdapter {
+public class BPagerAdapter extends MyPagerAdapter {
     protected Context context;
     protected ArrayList<Ad> list;
 

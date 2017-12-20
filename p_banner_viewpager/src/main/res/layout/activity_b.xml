@@ -4,7 +4,7 @@
                 android:layout_height="match_parent"
                 android:clipChildren="false"
                 tools:context=".MainActivity">
-    <android.support.v4.view.ViewPager
+    <com.jingcaiwang.b.MyViewPager
         android:id="@+id/viewPager"
         android:clipChildren="false"
         android:layout_width="match_parent"

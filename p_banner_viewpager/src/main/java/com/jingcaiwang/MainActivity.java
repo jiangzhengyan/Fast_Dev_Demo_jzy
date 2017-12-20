@@ -51,6 +51,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
         list.add(new Ad(R.mipmap.c, "揭秘北京电影如何升级"));
         list.add(new Ad(R.mipmap.d, "乐视网TV版大派送"));
         list.add(new Ad(R.mipmap.e, "热血屌丝的反杀"));
+        list.add(new Ad(R.mipmap.f, "热血屌丝的反杀"));
+        list.add(new Ad(R.mipmap.g, "热血屌丝的反杀"));
 
         //3.给ViewPager填充数据
         viewPager.setAdapter(new MainPagerAdapter(this, list));
