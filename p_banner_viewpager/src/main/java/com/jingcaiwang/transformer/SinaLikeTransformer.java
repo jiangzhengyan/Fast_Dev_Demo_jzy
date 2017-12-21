@@ -14,10 +14,10 @@ public class SinaLikeTransformer implements MyViewPager.PageTransformer {
     private static final String TAG = "SinaLikeTransformer";
     @Override
     public void transformPage(View view, float position) {
-        Log.e(TAG, "transformPage:  " + "  position:"+position);
+//        Log.e(TAG, "transformPage:  " + "  position:"+position);
         float scale = 0.4f;
         float scaleValue = 1 - Math.abs(position) * scale;
-        Log.e(TAG, "transformPage:scaleValue: "+scaleValue );
+//        Log.e(TAG, "transformPage:scaleValue: "+scaleValue );
         view.setScaleX(scaleValue);
         view.setScaleY(scaleValue);
         view.setAlpha(scaleValue);

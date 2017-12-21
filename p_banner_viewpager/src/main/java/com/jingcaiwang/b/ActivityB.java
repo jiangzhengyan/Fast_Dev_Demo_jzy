@@ -8,10 +8,8 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.os.Handler;
-
 import android.util.Log;
 import android.view.View;
-import android.view.animation.AccelerateInterpolator;
 import android.view.animation.Interpolator;
 import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
@@ -19,11 +17,9 @@ import android.widget.Scroller;
 import android.widget.TextView;
 
 import com.jingcaiwang.Ad;
-import com.jingcaiwang.MainPagerAdapter;
 import com.jingcaiwang.R;
 import com.jingcaiwang.transformer.SinaLikeTransformer;
 
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,6 +40,7 @@ public class ActivityB extends Activity {
     };
     private SensorManager sm;
     private static final String TAG = "ActivityB";
+    private int mUpItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,6 +90,12 @@ public class ActivityB extends Activity {
 //				Log.e("tag", "onPageScrollStateChanged state: "+state);
             }
         });
+        viewPager.setOnTouchUpItemListener(new MyViewPager.OnTouchUpItemListener() {
+            @Override
+            public void onTouchUpItem(int upItem) {
+                mUpItem = upItem;
+            }
+        });
 //        viewPager.setOnTouchListener(new View.OnTouchListener() {
 //            @Override
 //            public boolean onTouch(View v, MotionEvent event) {
@@ -127,6 +130,7 @@ public class ActivityB extends Activity {
         updateTitleAndDot();
 
         viewPager.setCurrentItem(list.size() * 100000);
+        mUpItem = viewPager.getCurrentItem();
         //发送延时消息
 //        handler.sendEmptyMessageDelayed(0, 2500);
 //        try {
@@ -152,31 +156,31 @@ public class ActivityB extends Activity {
             Log.e(TAG, "onCreate:sensorList1  " + sensorList1.get(i).getName());
         }
         Sensor defaultSensor = sm.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-        sm.registerListener(sensorEventListener,defaultSensor  , SensorManager.SENSOR_DELAY_NORMAL);
+        sm.registerListener(sensorEventListener, defaultSensor, SensorManager.SENSOR_DELAY_NORMAL);
     }
-    private float x, y, z;
+
+    private float x, y, z, startX, endX;
     private SensorEventListener sensorEventListener = new SensorEventListener() {
 
         @Override
         public void onSensorChanged(SensorEvent event) {
-
+            if (viewPager.isTouch()) {
+                return;
+            }
             float[] values = event.values;
-            x =  values[SensorManager.DATA_X];
-            y =  values[SensorManager.DATA_Y];
-            z =  values[SensorManager.DATA_Z];
-            Log.e(TAG, "onSensorChanged:X : "+x );
-            Log.e(TAG, "onSensorChanged:Y : "+y );
-            Log.e(TAG, "onSensorChanged:Z : "+z );
-
-
+            x = values[SensorManager.DATA_X];
+//            Log.e(TAG, "onSensorChanged:mUpItem  "+mUpItem );
+            int round = Math.round(x);
+//            Log.e(TAG, "onSensorChanged:round  "+round);
+            viewPager.setCurrentItem(mUpItem + round);
         }
 
         @Override
         public void onAccuracyChanged(Sensor sensor, int accuracy) {
 
-            Log.e(TAG, "onAccuracyChanged: "+sensor.getName() );
         }
     };
+
 
     /**
      * 初始化所有的点
