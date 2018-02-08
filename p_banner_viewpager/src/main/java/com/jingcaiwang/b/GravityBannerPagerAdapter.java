@@ -76,7 +76,7 @@ import android.view.ViewGroup;
  * ViewPager will keep the current page active provided the adapter implements
  * the method {@link #getItemPosition(Object)}.</p>
  */
-public abstract class MyPagerAdapter {
+public abstract class GravityBannerPagerAdapter {
     private final DataSetObservable mObservable = new DataSetObservable();
     private DataSetObserver mViewPagerObserver;
 

@@ -73,7 +73,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class MyViewPager extends ViewGroup {
+public class GravityBannerViewPager extends ViewGroup {
     private static final String TAG = "ViewPager";
     private static final boolean DEBUG = false;
 
@@ -125,7 +125,7 @@ public class MyViewPager extends ViewGroup {
 
     private final Rect mTempRect = new Rect();
 
-    MyPagerAdapter mAdapter;
+    GravityBannerPagerAdapter mAdapter;
     int mCurItem;   // Index of currently displayed page.
     private int mRestoredCurItem = -1;
     private Parcelable mRestoredAdapterState = null;
@@ -274,9 +274,9 @@ public class MyViewPager extends ViewGroup {
          * or when it is fully stopped/idle.
          *
          * @param state The new scroll state.
-         * @see MyViewPager#SCROLL_STATE_IDLE
-         * @see MyViewPager#SCROLL_STATE_DRAGGING
-         * @see MyViewPager#SCROLL_STATE_SETTLING
+         * @see GravityBannerViewPager#SCROLL_STATE_IDLE
+         * @see GravityBannerViewPager#SCROLL_STATE_DRAGGING
+         * @see GravityBannerViewPager#SCROLL_STATE_SETTLING
          */
         void onPageScrollStateChanged(int state);
     }
@@ -335,8 +335,8 @@ public class MyViewPager extends ViewGroup {
          * @param oldAdapter the previously set adapter
          * @param newAdapter the newly set adapter
          */
-        void onAdapterChanged(@NonNull MyViewPager viewPager,
-                              @Nullable MyPagerAdapter oldAdapter, @Nullable MyPagerAdapter newAdapter);
+        void onAdapterChanged(@NonNull GravityBannerViewPager viewPager,
+                              @Nullable GravityBannerPagerAdapter oldAdapter, @Nullable GravityBannerPagerAdapter newAdapter);
     }
 
     public interface OnTouchUpItemListener {
@@ -365,12 +365,12 @@ public class MyViewPager extends ViewGroup {
     public @interface DecorView {
     }
 
-    public MyViewPager(Context context) {
+    public GravityBannerViewPager(Context context) {
         super(context);
         initViewPager();
     }
 
-    public MyViewPager(Context context, AttributeSet attrs) {
+    public GravityBannerViewPager(Context context, AttributeSet attrs) {
         super(context, attrs);
         initViewPager();
     }
@@ -476,11 +476,11 @@ public class MyViewPager extends ViewGroup {
     }
 
     /**
-     * Set a MyPagerAdapter that will supply views for this pager as needed.
+     * Set a GravityBannerPagerAdapter that will supply views for this pager as needed.
      *
      * @param adapter Adapter to use
      */
-    public void setAdapter(MyPagerAdapter adapter) {
+    public void setAdapter(GravityBannerPagerAdapter adapter) {
         if (mAdapter != null) {
             mAdapter.setViewPagerObserver(null);
             mAdapter.startUpdate(this);
@@ -495,7 +495,7 @@ public class MyViewPager extends ViewGroup {
             scrollTo(0, 0);
         }
 
-        final MyPagerAdapter oldAdapter = mAdapter;
+        final GravityBannerPagerAdapter oldAdapter = mAdapter;
         mAdapter = adapter;
         mExpectedAdapterCount = 0;
 
@@ -543,9 +543,9 @@ public class MyViewPager extends ViewGroup {
     /**
      * Retrieve the current adapter supplying pages.
      *
-     * @return The currently registered MyPagerAdapter
+     * @return The currently registered GravityBannerPagerAdapter
      */
-    public MyPagerAdapter getAdapter() {
+    public GravityBannerPagerAdapter getAdapter() {
         return mAdapter;
     }
 
@@ -1002,11 +1002,11 @@ public class MyViewPager extends ViewGroup {
             final ItemInfo ii = mItems.get(i);
             final int newPos = mAdapter.getItemPosition(ii.object);
 
-            if (newPos == MyPagerAdapter.POSITION_UNCHANGED) {
+            if (newPos == GravityBannerPagerAdapter.POSITION_UNCHANGED) {
                 continue;
             }
 
-            if (newPos == MyPagerAdapter.POSITION_NONE) {
+            if (newPos == GravityBannerPagerAdapter.POSITION_NONE) {
                 mItems.remove(i);
                 i--;
 
@@ -1106,8 +1106,8 @@ public class MyViewPager extends ViewGroup {
             } catch (Resources.NotFoundException e) {
                 resName = Integer.toHexString(getId());
             }
-            throw new IllegalStateException("The application's MyPagerAdapter changed the adapter's"
-                    + " contents without calling MyPagerAdapter#notifyDataSetChanged!"
+            throw new IllegalStateException("The application's GravityBannerPagerAdapter changed the adapter's"
+                    + " contents without calling GravityBannerPagerAdapter#notifyDataSetChanged!"
                     + " Expected adapter item count: " + mExpectedAdapterCount + ", found: " + N
                     + " Pager id: " + resName
                     + " Pager class: " + getClass()
@@ -3026,7 +3026,7 @@ public class MyViewPager extends ViewGroup {
         @Override
         public void onInitializeAccessibilityEvent(View host, AccessibilityEvent event) {
             super.onInitializeAccessibilityEvent(host, event);
-            event.setClassName(MyViewPager.class.getName());
+            event.setClassName(GravityBannerViewPager.class.getName());
             final AccessibilityRecordCompat recordCompat =
                     AccessibilityEventCompat.asRecord(event);
             recordCompat.setScrollable(canScroll());
@@ -3041,7 +3041,7 @@ public class MyViewPager extends ViewGroup {
         @Override
         public void onInitializeAccessibilityNodeInfo(View host, AccessibilityNodeInfoCompat info) {
             super.onInitializeAccessibilityNodeInfo(host, info);
-            info.setClassName(MyViewPager.class.getName());
+            info.setClassName(GravityBannerViewPager.class.getName());
             info.setScrollable(canScroll());
             if (canScrollHorizontally(1)) {
                 info.addAction(AccessibilityNodeInfoCompat.ACTION_SCROLL_FORWARD);

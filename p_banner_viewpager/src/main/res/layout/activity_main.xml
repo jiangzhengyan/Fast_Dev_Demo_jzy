@@ -17,6 +17,7 @@
         android:layout_alignBottom="@id/viewPager"
         android:background="#6000"
         android:gravity="center"
+        android:id="@+id/lll"
         android:orientation="vertical"
         android:padding="12dp">
 
@@ -41,6 +42,7 @@
 
     </LinearLayout>
     <Button
+        android:layout_below="@+id/lll"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="activityB"

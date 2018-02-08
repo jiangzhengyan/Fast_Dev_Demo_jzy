@@ -1,16 +1,14 @@
 package com.jingcaiwang.transformer;
 
-import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.View;
 
-import com.jingcaiwang.b.MyViewPager;
+import com.jingcaiwang.b.GravityBannerViewPager;
 
 /**
  * Created by jiang_yan on 2017/12/7.
  */
 
-public class SinaLikeTransformer implements MyViewPager.PageTransformer {
+public class SinaLikeTransformer implements GravityBannerViewPager.PageTransformer {
     private static final String TAG = "SinaLikeTransformer";
     @Override
     public void transformPage(View view, float position) {

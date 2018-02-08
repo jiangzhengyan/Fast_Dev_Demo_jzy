@@ -13,7 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
 
-import com.jingcaiwang.b.ActivityB;
+import com.jingcaiwang.b.ActivityGravityBanner;
 
 import java.util.ArrayList;
 
@@ -33,6 +33,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         }
     };
     private Button btn_b;
+    private int mUpItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,7 +102,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
             }
         });
         //设置左右可以缓存的页数，但是一般不用，因为会造成内存过大的问题
-//		viewPager.setOffscreenPageLimit(4); 
+//		viewPager.setOffscreenPageLimit(41);
 
         //动态创建点，并且添加到dot_layout
         initDot();
@@ -114,6 +115,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
         viewPager.setCurrentItem(list.size() * 100000);
         //发送延时消息
         handler.sendEmptyMessageDelayed(0, 2500);
+          mUpItem = viewPager.getCurrentItem();
+
     }
 
     /**
@@ -173,8 +176,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         switch (v.getId()) {
             case (R.id.btn_b):
                 //跳转b
-
-                startActivity(new Intent(this,ActivityB.class));
+                startActivity(new Intent(this,ActivityGravityBanner.class));
                 break;
         }
     }
