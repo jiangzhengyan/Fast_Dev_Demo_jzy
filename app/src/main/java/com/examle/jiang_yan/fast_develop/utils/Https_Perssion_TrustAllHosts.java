@@ -18,15 +18,16 @@ import org.apache.http.util.EntityUtils;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.widget.Toast;
 
 import com.examle.jiang_yan.fast_develop.R;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 /**
  * 针对带https的接口不能访问的问题
  */
-public class Https_Perssion_TrustAllHosts extends ActionBarActivity {
+public class Https_Perssion_TrustAllHosts extends AppCompatActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

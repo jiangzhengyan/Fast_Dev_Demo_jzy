@@ -19,7 +19,10 @@ package com.jingcaiwang.b;
 import android.database.DataSetObservable;
 import android.database.DataSetObserver;
 import android.os.Parcelable;
-import android.support.v4.view.ViewPager;
+
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.fragment.app.FragmentStatePagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -27,8 +30,8 @@ import android.view.ViewGroup;
  * Base class providing the adapter to populate pages inside of
  * a {@link ViewPager}.  You will most likely want to use a more
  * specific implementation of this, such as
- * {@link android.support.v4.app.FragmentPagerAdapter} or
- * {@link android.support.v4.app.FragmentStatePagerAdapter}.
+ * {@link FragmentPagerAdapter} or
+ * {@link FragmentStatePagerAdapter}.
  *
  * <p>When you implement a PagerAdapter, you must override the following methods
  * at minimum:</p>

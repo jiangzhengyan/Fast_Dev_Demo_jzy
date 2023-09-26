@@ -7,8 +7,8 @@ import com.nineoldandroids.view.ViewPropertyAnimator;
 import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v4.view.ViewCompat;
-import android.util.Log;
+import androidx.core.view.ViewCompat;
+
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.CycleInterpolator;
@@ -16,7 +16,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends Activity {
 	ListView menu_listview,main_listview;

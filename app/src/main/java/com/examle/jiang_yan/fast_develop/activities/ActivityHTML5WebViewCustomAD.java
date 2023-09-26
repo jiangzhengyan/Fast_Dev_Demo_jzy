@@ -6,18 +6,14 @@ import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.PersistableBundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.webkit.DownloadListener;
 import android.webkit.JavascriptInterface;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.examle.jiang_yan.fast_develop.R;
 import com.examle.jiang_yan.fast_develop.widgets.CustomWebViewHTML5;
 
-import butterknife.Bind;
 import butterknife.ButterKnife;
 import de.keyboardsurfer.android.widget.crouton.Crouton;
 import de.keyboardsurfer.android.widget.crouton.Style;

@@ -2,54 +2,18 @@
 
 buildscript {
     repositories {
-      //  jcenter()
+        jcenter()
         google()
-//        jcenter()
-        maven { url 'http://maven.aliyun.com/nexus/content/repositories/central/' }
-        maven {
-            url 'https://maven.aliyun.com/repository/central'
-        }
-        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
-        jcenter { url "http://jcenter.bintray.com/" }
-//        maven { url 'http://developer.huawei.com/repo/' } // HUAWEI Maven repository
-
-
-//
-//        maven { url 'https://repo1.maven.org/maven2/' }
-//
-//        maven { url "http://oss.sonatype.org/content/repositories/snapshots" }
-//
-//        maven { url "https://jitpack.io" }
-//
-//        jcenter { url "http://jcenter.bintray.com/" }
-//
-//        maven { url 'http://repo.jfrog.org/artifactory/gradle-plugins' }
-//
-//        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
-//        maven { url 'http://maven.aliyun.com/nexus/content/repositories/jcenter' }
-//        maven {
-//            url "https://maven.google.com"
-//        }
-//
-//
-//        maven { url "https://jitpack.io" }
-//        mavenCentral()
-//        jcenter { url "http://jcenter.bintray.com/" }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:4.0.2'
-
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
     }
 }
 
 allprojects {
     repositories {
-       // jcenter()
+        jcenter()
         google()
-        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
-//        jcenter { url "http://jcenter.bintray.com/" }
     }
 }
 
