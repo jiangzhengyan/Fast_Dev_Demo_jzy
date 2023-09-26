@@ -3,8 +3,6 @@ package com.jzy.custommarqueetoast;
 import android.content.Context;
 import android.os.Binder;
 import android.os.Bundle;
-
-import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -12,6 +10,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.lang.reflect.Method;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (view.getId()) {
             case R.id.btn_show:
                 showmarquee();
-                onReboot( );
+                onReboot();
 
                 break;
         }
@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
-    public void onReboot( ) {
+    public void onReboot() {
 //        try {
 //            Runtime.getRuntime().exec("su -c \"/system/bin/shutdown\"");
 //        } catch (IOException e) {
@@ -82,7 +82,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         try {
             this.enforceCallingOrSelfPermission(android.Manifest.permission.REBOOT, null);
 
-            final long ident = Binder.clearCallingIdentity();Binder.restoreCallingIdentity(ident);
+            final long ident = Binder.clearCallingIdentity();
+            Binder.restoreCallingIdentity(ident);
         } finally {
 
         }
@@ -107,12 +108,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             //调用asInterface方法获取IPowerManager对象
             Object oIPowerManager = asInterface.invoke(null, oRemoteService);
             //获得shutdown()方法
-            Method shutdown = oIPowerManager.getClass().getMethod("shutdown",boolean.class,boolean.class);
+            Method shutdown = oIPowerManager.getClass().getMethod("shutdown", boolean.class, boolean.class);
             //调用shutdown()方法
-            shutdown.invoke(oIPowerManager,false,true);
+            shutdown.invoke(oIPowerManager, false, true);
 
         } catch (Exception e) {
-            Log.e(TAG,  e+"");
+            Log.e(TAG, e + "");
         }
     }
 

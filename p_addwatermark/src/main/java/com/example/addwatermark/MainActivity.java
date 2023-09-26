@@ -89,7 +89,7 @@ public class MainActivity extends Activity {
         Log.e(TAG, "s2: 宽 :  " + width + "    高:  " + height);
         int sizes = width / 25;
         textBitmap = ImageUtil.drawTextToLeftBottom(this, bm, "2018-12-12", sizes, Color.RED, sizes, sizes);
-        saveBitmap(this,textBitmap);
+        saveBitmap(this,textBitmap,null,null);
         mWartermarkImage.setImageBitmap(textBitmap);
     }
 
@@ -100,14 +100,14 @@ public class MainActivity extends Activity {
      */
     public void s3(View view) {
         Bitmap bm = BitmapFactory.decodeFile(imagePath);
-        saveBitmap(this, bm);
+        saveBitmap(this, bm,null,null);
     }
 
     /*8
    保存水印图片到相册
      */
     public void s4(View view) {
-        saveBitmap(this, textBitmap);
+        saveBitmap(this, textBitmap,null,null);
     }
 
 
@@ -202,7 +202,7 @@ public class MainActivity extends Activity {
         if (!appDir.exists()) {
             appDir.mkdirs();
         }
-        String fileName = "workerImage" + System.currentTimeMillis() + ".jpg";
+          fileName = "workerImage" + System.currentTimeMillis() + ".jpg";
         File f = new File(appDir, fileName);
         try {
             FileOutputStream fos = new FileOutputStream(f);
